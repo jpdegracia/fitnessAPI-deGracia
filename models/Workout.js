@@ -1,14 +1,17 @@
 const mongoose = require('mongoose');
 
 const workoutSchema = new mongoose.Schema({
-    
+    userId: {
+        type: String,
+        required: [true, 'userId is Required']
+    },
     name: {
         type: String,
         required: [true, 'Name is Required']
     },
     duration: {
         type: String,
-        required: [true, 'duration is Required']
+        required: [true, 'Duration is Required']
     },
     dateAdded: {
         type: Date,
@@ -16,9 +19,7 @@ const workoutSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        default: "pending",
-        enum: ['pending', 'completed']
-
+        default: "pending"
     }
 
 });
